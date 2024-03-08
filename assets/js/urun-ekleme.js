@@ -2,7 +2,7 @@
 // doküman(sayfa) içerisinde (elementler ile) işlem yapacağız. 
 
 // içerideki tüm elementlerin dinlenmesi - sayfanın yüklenmesini dinler
-document.addEventListener("DOMContentLoaded",function(sayfaYuklendi){
+document.addEventListener("DOMContentLoaded",function(ee){
     // Sayfa yüklendiğini belirtir.
     console.log("sayfa yüklendi");
 
@@ -10,15 +10,20 @@ document.addEventListener("DOMContentLoaded",function(sayfaYuklendi){
     let btnUrunEkle = document.getElementById("btnUrunEkle");
     let urunler = [];
 
-    
-    btnUrunEkle.addEventListener("click",function (btnUrunEkleTiklandi) {
-        // alert("id : btnUrunEkle - tıklandı")
-
-        // urunAdi : text inputu seçtik
+    //btnUrunEkle Butonu İşlemleri - malzeme ekleme için.
+    btnUrunEkle.addEventListener("click",function (e) {
         let urunAdi = document.getElementById("urunAdi").value;
-        console.log(urunAdi);
-
-        urunler.push[urunAdi];
+        urunAdi = urunAdi.trim();
+        urunAdi = urunAdi.toLowerCase();
+        // listede ürün - malzeme kontrolü
+        let isAdded = urunler.includes(urunAdi);
+        if (isAdded) {
+            alert("ürün - malzeme daha önce eklenmiştir.");
+        }else{
+            urunler.push(urunAdi);
+            // Localstorage'a aktaralım
+            localStorage.setItem("urunler",JSON.stringify(urunler));
+        }
     });
 })
 
