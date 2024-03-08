@@ -78,5 +78,20 @@ document.addEventListener("DOMContentLoaded",function(ee){ //Sayfa yüklendiğin
         }
     }
 
+    // malzeme - ürün listesi bölümündeki arama çubuğunu kullanacağız.
+    let searchInput = document.getElementById("search");
+    searchInput.addEventListener("input",function (arama) {
+        // this = searchInput değişkenini işaret ediyor.
+        let searchValue = this.value;
+
+        let filtrelenmisUrunler = urunler.filter(function (urun,index,array) {
+            // urun parametresinde searchValueden gelen değerleri küçük harfe dönüştürerek 
+            // geri döndür.
+            return urun.toLowerCase().includes(searchValue.toLowerCase());        
+        });
+
+        // Arama yaptığımız ürünleri listeleyelim.
+        listele(filtrelenmisUrunler);
+    })
 })
 
