@@ -2,13 +2,17 @@
 // doküman(sayfa) içerisinde (elementler ile) işlem yapacağız. 
 
 // içerideki tüm elementlerin dinlenmesi - sayfanın yüklenmesini dinler
-document.addEventListener("DOMContentLoaded",function(ee){
-    // Sayfa yüklendiğini belirtir.
-    console.log("sayfa yüklendi");
+document.addEventListener("DOMContentLoaded",function(ee){ //Sayfa yüklendiğinde
+
 
     // Malzeme - Ürün Ekle butonunu seçtik. Selector
     let btnUrunEkle = document.getElementById("btnUrunEkle");
-    let urunler = [];
+
+    // LOCAL STORAGE'DA MALEZEME ELEMANLARI VARSA URUN LİSTESİNDE GÖRÜNTÜLEYELİM.
+    let urunler = JSON.parse(localStorage.getItem("urunler"));
+    if (urunler == null) {
+        urunler = [];
+    }
 
     //btnUrunEkle Butonu İşlemleri - malzeme ekleme için.
     btnUrunEkle.addEventListener("click",function (e) {
@@ -25,5 +29,9 @@ document.addEventListener("DOMContentLoaded",function(ee){
             localStorage.setItem("urunler",JSON.stringify(urunler));
         }
     });
+
+
+    
+
 })
 
