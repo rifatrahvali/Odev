@@ -92,6 +92,33 @@ document.addEventListener("DOMContentLoaded",function(ee){ //Sayfa yüklendiğin
 
         // Arama yaptığımız ürünleri listeleyelim.
         listele(filtrelenmisUrunler);
+    });
+
+
+    // eklediğmiz malzemeleri silme işlemi
+    // ul -> li -> delete-product ismi verdik.
+
+    document.body.addEventListener('click',function (event) {
+        
+        // tıklanan elementin hedefini - hangi element olduğunu bulacağız.
+        let element = event.target; // tıklanan elementi temsil eder.
+        // let elementIsDeleteIcon = element.matches('.delete-product');
+        let elementIsDeleteIcon = element.className.includes('delete-product');
+
+        if (elementIsDeleteIcon) {
+            // Delete icon'a tıklandığında çalışacak 
+            // silinecek malzeme ürün
+            let silinecekUrunID = element.id;
+            // daha önce oluşturduğumuz urunler array'imizden çıkaralım.
+            urunler.splice(silinecekUrunID,1);
+
+            // listeden ürünleri çıkarttım bir daha listeleyeceğiz.
+            listele(urunler);
+
+            // local storage'daki alanı da güncelleyelim.
+            localStorage.setItem("urunler",JSON.stringify(urunler));
+        }
     })
-})
+
+});
 
