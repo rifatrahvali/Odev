@@ -22,10 +22,10 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-primary p-4">
+    <nav class="navbar navbar-expand-lg bg-primary p-5 mb-5">
         <!-- p-4 nav için padding : 4 verdik - sağ, sol, üst, alt -->
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Yemek Tarifleri</a>
+            <a class="navbar-brand text-white" href="urun-ekleme.html">Yemek Tarifleri</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                         <a class="nav-link active text-white" aria-current="page" href="#">Yemek Listesi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Malzeme Ekle</a>
+                        <a class="nav-link text-white" href="urun-ekleme.html">Malzeme Ekle</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Yemek Ekle</a>
@@ -48,19 +48,38 @@
         </div>
     </nav>
 
-    <!-- CARD -->
-    <div class="card">
-        <div class="card-header">
-            Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
+    <!-- MAIN -->
+    <main class="container">
+        <div class="row">
+            <!-- COL-MD-6 -->
+            <div class="col-md-6">
+                <!-- CARD - Malzeme - Ürün Ekle  -->
+                <div class="card">
+                    <div class="card-header">
+                        Malzeme - Ürün Ekle
+                    </div>
+                    <div class="card-body">
+                        <!--  -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Mazleme - Ürün Adı" id="urunAdi">
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-success w-100" id="btnUrunEkle">
+                                    Malzeme - Ürün Ekle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /CARD - Malzeme - Ürün Ekle  -->
+            </div>
+            <!-- /COL-MD-6 -->
 
-
+            
+        </div>
+    </main>
+    <!-- /MAIN -->
 
     <!-- Bootstrap 5 için gerekli JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
