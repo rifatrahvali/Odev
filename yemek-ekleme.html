@@ -13,10 +13,10 @@
     <!-- Bootstrap 5 Icons için gerekli CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="assets/css/urun-ekleme.css">
+    <link rel="stylesheet" href="assets/css/yemek-ekleme.css">
 
     <!-- Sayfa Başlığı -->
-    <title>Malzeme Ekle</title>
+    <title>Yemek Ekle</title>
 </head>
 
 <body>
@@ -52,41 +52,21 @@
     <main class="container">
         <div class="row">
             <!-- COL-MD-6 - Malzeme - Ürün Ekle -->
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <!-- CARD - Malzeme - Ürün Ekle  -->
                 <div class="card">
                     <div class="card-header">
-                        Malzeme - Ürün Ekle
+                        Yemek Ekle
                     </div>
                     <div class="card-body">
                         <!--  -->
                         <div class="row">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Mazleme - Ürün Adı" id="urunAdi">
-                            </div>
-                            <div class="col-md-6">
-                                <button type="button" class="btn btn-success w-100" id="btnUrunEkle">
-                                    Malzeme - Ürün Ekle
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /CARD - Malzeme - Ürün Ekle  -->
-            </div>
-            <!-- /COL-MD-6 - Malzeme - Ürün Ekle-->
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Yemek Adı" id="yemekAdi">
 
-            <!-- COL-MD-6 - Malzeme - Ürün Listesi -->
-            <div class="col-md-6">
-                <!-- CARD - Malzeme - Ürün Listesi  -->
-                <div class="card">
-                    <div class="card-header">
-                        Malzeme - Ürün Listesi
-                    </div>
-                    <div class="card-body">
-                        <!--  -->
-                        <div class="row">
-                            <div class="col-md-12">
+                                <textarea class="form-control mt-3" id="yemekTarif" placeholder="Yemek Tarifi" rows="8"></textarea>
+                            </div>
+                            <div class="col-md-4">
                                 <input type="text" class="form-control" placeholder="Malzele - Ürün Ara" id="search">
                                 <!-- Malzeme - Ürün Listesi'nin kapsayıcısı -->
                                 <ul class="list-group mt-3" id="urunListesi">
@@ -96,13 +76,36 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <h5 class="card-header">
+                                        <strong>Yemek Adı : </strong>
+                                        <span id="yemekBaslik">Domates Çorbası</span>
+                                    </h5>
+                                    <div class="card-body">
+                                      <div class="content">
+                                        <h5>İçindekiler (Malzemeler)</h5>
+                                        <!-- Yemeğin içindeki malzemeler -->
+                                        <ul class="icerik-listesi" id="icerikListesi">
+                                            <li class="d-flex justify-content-between">
+                                                <span>
+                                                    <i class="bi bi-trash delete-product-content"></i>
+                                                    <label for="miktar-1">Domates</label>
+                                                </span>
+                                                <input type="text" placeholder="miktar" id="miktar-1" 
+                                                    class="float-end border-0 border-bottom border-black">
+                                            </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- /CARD - Malzeme - Ürün Listesi  -->
+                <!-- /CARD - Malzeme - Ürün Ekle  -->
             </div>
-            <!-- /COL-MD-6 - Malzeme - Ürün Listesi -->
-
+            <!-- /COL-MD-6 - Malzeme - Ürün Ekle-->
         </div>
     </main>
     <!-- /MAIN -->
@@ -110,7 +113,7 @@
     <!-- Bootstrap 5 için gerekli JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Index için dom elemanlarının bulunduğu js -->
-    <script src="assets/js/urun-ekleme.js"></script>
+    <script src="assets/js/yemek-ekleme.js"></script>
 </body>
 
 </html>
