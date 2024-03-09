@@ -18,7 +18,12 @@ document.addEventListener("DOMContentLoaded",function(yuklendi){
     });
 
     yemekTarif.addEventListener("input",function(yemekTarifTiklandi){
-
+        let detay = this.value;
+        if (detay.length > 1) {
+            tarifDetay.textContent = detay;
+        }else{
+            tarifDetay.textContent = "Yemek Başlığıdır."
+        }
     });
 
 
