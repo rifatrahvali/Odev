@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function (yuklendi) {
     let yemek = {
         yemekAdi: "",
         yemekTarif: "",
+        // her bir eleman ekledikçe
         icindekiler: [],
     };
     let icindekiler = [];
@@ -79,10 +80,8 @@ document.addEventListener("DOMContentLoaded", function (yuklendi) {
             };
             icindekiler.unshift(product);
             urunIcerigiListele(icindekiler);
-        } else {
-
-        }
-
+            yemek.icindekiler = icindekiler;
+        } 
     });
 
     // yemek içeriğini miktarını listeleyen bir fonksiyon
@@ -160,7 +159,8 @@ document.addEventListener("DOMContentLoaded", function (yuklendi) {
                 liElement.appendChild(spanElement);
                 liElement.appendChild(inputElement);
                 icerikListesi.appendChild(liElement);
-
+                
+                
             });
 
 
