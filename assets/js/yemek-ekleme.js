@@ -7,15 +7,23 @@ document.addEventListener("DOMContentLoaded", function (yuklendi) {
     let tarifDetay = document.getElementById("tarifDetay");
     let icerikListesi = document.getElementById("icerikListesi");
     let urunListesi = document.getElementById("urunListesi");
+    let btnYemekKaydet = document.getElementById("btnYemekKaydet");
 
     // kullanıcı yemek eklemek istiyecek
+    // en son kaydettiğimizde local storage'da bu yapı olacak.
     let yemek = {
         yemekAdi: "",
         yemekTarif: "",
         // her bir eleman ekledikçe
         icindekiler: [],
     };
+
+    //
     let icindekiler = [];
+
+
+
+
 
 
     // localstorage'dan urunleri getirelim
@@ -64,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function (yuklendi) {
     });
 
     // malzemelerimizi / ürünlerimizi localstorage'dan listeleyelim.
-
-
     document.body.addEventListener("click", function (documentBClick) {
         // hangi elemente tıklandıysa html tag'ine ulaştık.
         let element = documentBClick.target;
@@ -84,8 +90,14 @@ document.addEventListener("DOMContentLoaded", function (yuklendi) {
         } 
     });
 
+
+
+
+
+
     // yemek içeriğini miktarını listeleyen bir fonksiyon
     // ikinci bölümdeki + butonuna tıkladığımızda 3. bölüme miktarıyla ekleyeceğiz
+
 
 
     function urunListele(urunler) {

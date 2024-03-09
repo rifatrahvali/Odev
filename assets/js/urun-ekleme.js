@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded",function(ee){ //Sayfa yüklendiğin
         }else{
             // urunler.push(urunAdi); // array'in sonuna ekler
             urunler.unshift(urunAdi); // Array'in basina ekler.
-            // Localstorage'a aktaralım
+            // Localstorage'a aktaralım - kaydedelim
             localStorage.setItem("urunler",JSON.stringify(urunler));
 
             // Yeni ürün eklendiğinde
